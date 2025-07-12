@@ -1,0 +1,95 @@
+@baseUrl = https://localhost:7001
+@apiVersion = v1
+
+### Health Check
+GET {{baseUrl}}/health
+
+### Check if assessment exists
+GET {{baseUrl}}/api/{{apiVersion}}/nutritionassessment/exists
+
+### Create new nutrition assessment
+POST {{baseUrl}}/api/{{apiVersion}}/nutritionassessment
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "age": 30,
+  "gender": 1,
+  "weight": 75.5,
+  "height": 180.0,
+  "mealsPerDay": 3,
+  "vegetablesPerDay": 5,
+  "fruitsPerDay": 2,
+  "waterIntake": 8,
+  "eatsBreakfast": true,
+  "eatsFastFood": false,
+  "eatsProcessedFood": false,
+  "hasFoodAllergies": false,
+  "foodAllergies": "",
+  "takesSupplements": true,
+  "supplements": "Vitamin D, Omega-3",
+  "activityLevel": 3,
+  "sleepQuality": 3,
+  "stressLevel": 2
+}
+
+### Get assessment report
+GET {{baseUrl}}/api/{{apiVersion}}/nutritionassessment/report
+
+### Get latest assessment
+GET {{baseUrl}}/api/{{apiVersion}}/nutritionassessment/latest
+
+### Update existing assessment
+POST {{baseUrl}}/api/{{apiVersion}}/nutritionassessment
+Content-Type: application/json
+
+{
+  "name": "John Doe Updated",
+  "age": 31,
+  "gender": 1,
+  "weight": 76.0,
+  "height": 180.0,
+  "mealsPerDay": 4,
+  "vegetablesPerDay": 6,
+  "fruitsPerDay": 3,
+  "waterIntake": 10,
+  "eatsBreakfast": true,
+  "eatsFastFood": false,
+  "eatsProcessedFood": false,
+  "hasFoodAllergies": false,
+  "foodAllergies": "",
+  "takesSupplements": true,
+  "supplements": "Vitamin D, Omega-3, Magnesium",
+  "activityLevel": 4,
+  "sleepQuality": 4,
+  "stressLevel": 1
+}
+
+### Test with minimal data
+POST {{baseUrl}}/api/{{apiVersion}}/nutritionassessment
+Content-Type: application/json
+
+{
+  "mealsPerDay": 2,
+  "vegetablesPerDay": 1,
+  "fruitsPerDay": 0,
+  "waterIntake": 3,
+  "eatsBreakfast": false,
+  "eatsFastFood": true,
+  "eatsProcessedFood": true,
+  "activityLevel": 1,
+  "sleepQuality": 2,
+  "stressLevel": 3
+}
+
+### Get current nutrient report
+GET {{baseUrl}}/api/{{apiVersion}}/report/current
+
+### Get personalized supplement set
+GET {{baseUrl}}/api/{{apiVersion}}/report/personalized-set
+
+### Get nutrient breakdown with personalized set
+GET {{baseUrl}}/api/{{apiVersion}}/report/with-personalized-set
+
+### Get supplement benefits
+GET {{baseUrl}}/api/{{apiVersion}}/supplement/benefits
