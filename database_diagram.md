@@ -66,7 +66,8 @@ erDiagram
 
     NutritionAssessment ||--o{ NutrientBalance : "has"
     NutritionAssessment ||--o{ PersonalizedSet : "has"
-    Nutrient ||--o{ NutrientBalance : "referenced_in"
+    Nutrient ||--o{ NutrientBalance : "referenced_by"
+    PersonalizedSet }o--o{ Supplement : "many-to-many"
     PersonalizedSet ||--o{ PersonalizedSetSupplements : "contains"
     Supplement ||--o{ PersonalizedSetSupplements : "included_in"
 ```
@@ -97,4 +98,5 @@ Junction table linking personalized sets with their recommended supplements.
 - **ActivityLevel**: Sedentary, LightlyActive, ModeratelyActive, VeryActive, ExtremelyActive
 - **SleepQuality**: Poor, Fair, Good, Excellent
 - **StressLevel**: Low, Moderate, High, VeryHigh
-- **NutrientStatus**: Deficient, Insufficient, Adequate, Optimal, Excessive 
+- **NutrientStatus**: Deficient, Insufficient, Adequate, Optimal, Excessive
+- **NutritionQuality**: Poor, Fair, Good, Excellent 
