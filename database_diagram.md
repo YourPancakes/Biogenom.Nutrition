@@ -59,17 +59,10 @@ erDiagram
         string when_to_take
     }
 
-    PersonalizedSetSupplements {
-        int personalized_set_id FK
-        int supplement_id FK
-    }
-
     NutritionAssessment ||--o{ NutrientBalance : "has"
     NutritionAssessment ||--o{ PersonalizedSet : "has"
     Nutrient ||--o{ NutrientBalance : "referenced_by"
     PersonalizedSet }o--o{ Supplement : "many-to-many"
-    PersonalizedSet ||--o{ PersonalizedSetSupplements : "contains"
-    Supplement ||--o{ PersonalizedSetSupplements : "included_in"
 ```
 
 ## Database Tables
@@ -88,15 +81,3 @@ Custom supplement sets created for specific nutrition assessments.
 
 ### Supplements
 Reference data for available supplements with dosage and usage information.
-
-### PersonalizedSetSupplements
-Junction table linking personalized sets with their recommended supplements.
-
-## Enums
-
-- **Gender**: Male, Female, Other
-- **ActivityLevel**: Sedentary, LightlyActive, ModeratelyActive, VeryActive, ExtremelyActive
-- **SleepQuality**: Poor, Fair, Good, Excellent
-- **StressLevel**: Low, Moderate, High, VeryHigh
-- **NutrientStatus**: Deficient, Insufficient, Adequate, Optimal, Excessive
-- **NutritionQuality**: Poor, Fair, Good, Excellent 
