@@ -2,24 +2,23 @@ using Biogenom.Nutrition.Domain.Enums;
 
 namespace Biogenom.Nutrition.Application.DTOs;
 
-public class NutritionAssessmentDto
+public record NutritionAssessmentDto
 {
-    public int Id { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public string Name { get; set; } = string.Empty;
-    public int Age { get; set; }
-    public Gender Gender { get; set; }
-    public decimal Weight { get; set; }
-    public decimal Height { get; set; }
-    public int MealsPerDay { get; set; }
-    public int VegetablesPerDay { get; set; }
-    public int FruitsPerDay { get; set; }
-    public int WaterIntake { get; set; }
-    public bool EatsBreakfast { get; set; }
-    public bool EatsFastFood { get; set; }
-    public bool EatsProcessedFood { get; set; }
-    public ActivityLevel ActivityLevel { get; set; }
-    public SleepQuality SleepQuality { get; set; }
-    public StressLevel StressLevel { get; set; }
-
+    public int Id { get; init; }
+    public DateTime CreatedAt { get; init; }
+    public string Name { get; init; } = string.Empty;
+    public int Age { get; init; }
+    public Gender Gender { get; init; }
+    public decimal Weight { get; init; }
+    public decimal Height { get; init; }
+    public int MealsPerDay { get; init; }
+    public int VegetablesPerDay { get; init; }
+    public int FruitsPerDay { get; init; }
+    public int WaterIntake { get; init; }
+    public bool EatsBreakfast { get; init; }
+    public bool EatsFastFood { get; init; }
+    public bool EatsProcessedFood { get; init; }
+    public ActivityLevel ActivityLevel { get; init; }
+    public SleepQuality SleepQuality { get; init; }
+    public StressLevel StressLevel { get; init; }
 } 

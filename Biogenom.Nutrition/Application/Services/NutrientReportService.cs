@@ -55,17 +55,23 @@ public class NutrientReportService : INutrientReportService
                 
                 if (balance != null)
                 {
-                    reportNutrient.CurrentValue = balance.CurrentValue;
-                    reportNutrient.FromDiet = balance.FromDiet;
-                    reportNutrient.FromSupplements = balance.FromSupplements;
-                    reportNutrient.Status = balance.Status;
+                    reportNutrient = reportNutrient with 
+                    { 
+                        CurrentValue = balance.CurrentValue,
+                        FromDiet = balance.FromDiet,
+                        FromSupplements = balance.FromSupplements,
+                        Status = balance.Status
+                    };
                 }
                 else
                 {
-                    reportNutrient.CurrentValue = 0;
-                    reportNutrient.FromDiet = 0;
-                    reportNutrient.FromSupplements = 0;
-                    reportNutrient.Status = NutrientStatus.Deficit;
+                    reportNutrient = reportNutrient with 
+                    { 
+                        CurrentValue = 0,
+                        FromDiet = 0,
+                        FromSupplements = 0,
+                        Status = NutrientStatus.Deficit
+                    };
                 }
 
                 reportNutrients.Add(reportNutrient);
@@ -106,17 +112,23 @@ public class NutrientReportService : INutrientReportService
                 
                 if (balance != null)
                 {
-                    reportNutrient.CurrentValue = balance.CurrentValue;
-                    reportNutrient.FromDiet = balance.FromDiet;
-                    reportNutrient.FromSupplements = balance.FromSupplements;
-                    reportNutrient.Status = balance.Status;
+                    reportNutrient = reportNutrient with 
+                    { 
+                        CurrentValue = balance.CurrentValue,
+                        FromDiet = balance.FromDiet,
+                        FromSupplements = balance.FromSupplements,
+                        Status = balance.Status
+                    };
                 }
                 else
                 {
-                    reportNutrient.CurrentValue = 0;
-                    reportNutrient.FromDiet = 0;
-                    reportNutrient.FromSupplements = 0;
-                    reportNutrient.Status = NutrientStatus.Deficit;
+                    reportNutrient = reportNutrient with 
+                    { 
+                        CurrentValue = 0,
+                        FromDiet = 0,
+                        FromSupplements = 0,
+                        Status = NutrientStatus.Deficit
+                    };
                 }
 
                 reportNutrients.Add(reportNutrient);

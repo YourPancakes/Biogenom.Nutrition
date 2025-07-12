@@ -79,8 +79,7 @@ public class PersonalizedSetService : IPersonalizedSetService
 
             var supplementDtos = _mapper.Map<List<SupplementDto>>(personalizedSet.Supplements);
 
-            var result = _mapper.Map<PersonalizedSetDto>(personalizedSet);
-            result.Supplements = supplementDtos;
+            var result = _mapper.Map<PersonalizedSetDto>(personalizedSet) with { Supplements = supplementDtos };
 
             _logger.LogInformation("Retrieved personalized set with {Count} supplements", supplementDtos.Count);
             return result;
@@ -136,8 +135,7 @@ public class PersonalizedSetService : IPersonalizedSetService
 
             var supplementDtos = _mapper.Map<List<SupplementDto>>(personalizedSet.Supplements);
 
-            var result = _mapper.Map<PersonalizedSetDto>(personalizedSet);
-            result.Supplements = supplementDtos;
+            var result = _mapper.Map<PersonalizedSetDto>(personalizedSet) with { Supplements = supplementDtos };
 
             _logger.LogInformation("Retrieved personalized set for assessment {AssessmentId} with {Count} supplements", assessmentId, supplementDtos.Count);
             return result;

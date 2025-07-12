@@ -114,8 +114,7 @@ public class NutritionAssessmentService : INutritionAssessmentService
             };
             
             var (totalScore, qualityLevel) = _scoreCalculator.CalculateAssessmentScore(request);
-            reportDto.TotalScore = totalScore;
-            reportDto.QualityLevel = qualityLevel;
+            reportDto = reportDto with { TotalScore = totalScore, QualityLevel = qualityLevel };
             
             _logger.LogInformation("Successfully retrieved full assessment report for id {AssessmentId} with score {Score} and quality {Quality}", 
                 assessmentId, totalScore, qualityLevel);

@@ -2,11 +2,11 @@ using System.Text.Json.Serialization;
 
 namespace Biogenom.Nutrition.Application.DTOs;
 
-public class PersonalizedSetDto
+public record PersonalizedSetDto
 {
-    public int Id { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public string Name { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
-    public List<SupplementDto> Supplements { get; set; } = new List<SupplementDto>();
+    public int Id { get; init; }
+    public DateTime CreatedAt { get; init; }
+    public string Name { get; init; } = string.Empty;
+    public string Description { get; init; } = string.Empty;
+    public List<SupplementDto> Supplements { get; init; } = new List<SupplementDto>();
 } 
